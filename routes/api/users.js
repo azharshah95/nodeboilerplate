@@ -5,6 +5,7 @@ const jwt = require('jsonwebtoken');
 const router = express.Router();
 const keys = require('../../config/keys');
 const passport = require('passport');
+const cors = require('cors');
 
 // Load Input Validation
 const validateRegisterInput = require('../../validation/register');
@@ -57,7 +58,7 @@ router.get('/test', (req, res) => res.json({ msg: 'User Works' }));
 // @route   POST api/users/register
 // @desc    Register user
 // @access  Public
-router.post('/register', (req, res) => {
+router.post('/register', cors(), (req, res) => {
 
   const { errors, isValid } = validateRegisterInput(req.body);
 
