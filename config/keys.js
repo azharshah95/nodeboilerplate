@@ -4,5 +4,6 @@ module.exports = {
     useNewUrlParser: true,
     useUnifiedTopology: true
   },
-  secretOrKey: 'secret'
+  secretOrKey: 'secret',
+  jwtExpiry: 900
 }
