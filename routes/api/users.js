@@ -92,7 +92,10 @@ router.post('/register', cors(), (req, res) => {
             newUser.password = hash;
             newUser
               .save()
-              .then(user => res.json(user))
+              .then(user => res.json({
+                name: user.name,
+                email: user.email
+              }))
               .catch(err => console.log(err));
           });
         });
