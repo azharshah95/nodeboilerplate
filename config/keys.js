@@ -2,7 +2,7 @@ module.exports = {
   mongoURI: process.env.MONGODB_URI,
   options: {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: false
   },
   secretOrKey: process.env.SECRET_OR_KEY,
   jwtExpiry: parseInt(process.env.JWT_EXPIRY),
