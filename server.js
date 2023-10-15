@@ -17,6 +17,7 @@ app.options('*', cors())
 const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
+const oauth = require('./routes/oauth');
 
 // Body Parser
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
+app.use('/oauth', oauth);
 
 // Connect to mongodb
 mongoose
